@@ -14,18 +14,7 @@
 		dogs = dogs.filter((dog) => dog.id !== id);
 	}
 
-	let num = 21;
 </script>
-
-<!-- If Else statement with catch at bottom -->
-
-{#if num > 20}
-	<p>greater than 20</p>
-{:else if num > 5}
-	<p>greater than 5</p>
-{:else} 
-	<p>Not greater than 20 or 5</p>
-{/if}
 
 <Modal />
 <main>
