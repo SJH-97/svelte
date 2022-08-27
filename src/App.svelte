@@ -1,4 +1,7 @@
 <script>
+	//importing Modal component 
+	import Modal from './Modal.svelte';
+
 	let dogs = [
 		// comment out data in array to see else block rendering
 		{name: 'Cooper', age: 9, breed: 'French Bulldog', id: 1},
@@ -24,6 +27,7 @@
 	<p>Not greater than 20 or 5</p>
 {/if}
 
+<Modal />
 <main>
  {#each dogs as dog (dog.id)}
 <div>
