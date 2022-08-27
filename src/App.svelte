@@ -1,20 +1,23 @@
 <script>
-	 let name = "Samuel";
+	 let firstName = "Samuel";
+	 let lastName = "Harrison";
 	 let belt = "Black";
-	 const handleClick = () => {
-		belt = "orange"
-	 };
-	 const handleInput = (e) => {
-		belt = e.target.value
-	 };
+
+	//  reactive value
+	$:fullName = `${firstName} ${lastName}`;
+
+	// reactive statment
+	$: {
+		console.log(belt, "belt colour");
+		console.log(fullName, "fullname");
+		}
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<h1 style="color: {belt}"> Belt colour: {belt}</h1>
-	<button on:click={handleClick}>Update belt colour</button>
-	 <!-- <input type="text" on:input={handleInput} value={belt}/> -->
+	<h1>{fullName} - {belt} belt</h1>
 	 <!-- Svelte two way binding using bind keyword -->
+	 <input type="text" bind:value={firstName} />
+	 <input type="text" bind:value={lastName} />
 	 <input type="text" bind:value={belt} />
 </main>
 
