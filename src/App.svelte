@@ -5,12 +5,23 @@
 		{name: 'Marley', age: 9, breed: 'English Bulldog', id: 2},
 		{name: 'Bailey', age: 5, breed: 'Pug', id: 3}
 	];
+
+	const handleClick = (id) => {
+		// delete a dog from dogs
+		dogs = dogs.filter((dog) => dog.id !== id);
+	}
 </script>
 
 <main>
  {#each dogs as dog (dog.id)}
+<div>
 	<h4>{dog.name}</h4>
 	<p>{dog.age} years old, {dog.breed}</p>
+	<!-- Inline handler -->
+	<button on:click={() => handleClick(dog.id)}>
+	Delete
+	</button>
+</div>
  {:else}
 	<p>There are no dogs in the dogs array</p>
  {/each}
