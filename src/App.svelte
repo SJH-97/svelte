@@ -3,14 +3,19 @@
 	 let belt = "Black";
 	 const handleClick = () => {
 		belt = "orange"
-	 }
+	 };
+	 const handleInput = (e) => {
+		belt = e.target.value
+	 };
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<h1> Belt colour: {belt}</h1>
+	<h1 style="color: {belt}"> Belt colour: {belt}</h1>
 	<button on:click={handleClick}>Update belt colour</button>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	 <!-- <input type="text" on:input={handleInput} value={belt}/> -->
+	 <!-- Svelte two way binding using bind keyword -->
+	 <input type="text" bind:value={belt} />
 </main>
 
 <style>
