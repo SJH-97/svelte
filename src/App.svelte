@@ -1,24 +1,19 @@
 <script>
-	 let firstName = "Samuel";
-	 let lastName = "Harrison";
-	 let belt = "Black";
-
-	//  reactive value
-	$:fullName = `${firstName} ${lastName}`;
-
-	// reactive statment
-	$: {
-		console.log(belt, "belt colour");
-		console.log(fullName, "fullname");
-		}
+	let dogs = [
+		// comment out data in array to see else block rendering
+		{name: 'Cooper', age: 9, breed: 'French Bulldog', id: 1},
+		{name: 'Marley', age: 9, breed: 'English Bulldog', id: 2},
+		{name: 'Bailey', age: 5, breed: 'Pug', id: 3}
+	];
 </script>
 
 <main>
-	<h1>{fullName} - {belt} belt</h1>
-	 <!-- Svelte two way binding using bind keyword -->
-	 <input type="text" bind:value={firstName} />
-	 <input type="text" bind:value={lastName} />
-	 <input type="text" bind:value={belt} />
+ {#each dogs as dog (dog.id)}
+	<h4>{dog.name}</h4>
+	<p>{dog.age} years old, {dog.breed}</p>
+ {:else}
+	<p>There are no dogs in the dogs array</p>
+ {/each}
 </main>
 
 <style>
