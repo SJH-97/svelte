@@ -13,10 +13,12 @@
 		// delete a dog from dogs
 		dogs = dogs.filter((dog) => dog.id !== id);
 	}
-
+	
+	// Setting a prop
+	let message = "i am a prop value"
 </script>
 
-<Modal />
+<Modal message={message} isPromo/>
 <main>
  {#each dogs as dog (dog.id)}
 <div>
