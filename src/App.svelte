@@ -1,6 +1,7 @@
 <script>
 	//importing Modal component 
 	import Modal from './Modal.svelte';
+	import AddDogForm from './AddDogForm.svelte';
 
 	let dogs = [
 		// comment out data in array to see else block rendering
@@ -24,12 +25,7 @@
 </script>
 
 <Modal isPromo {showModal} on:click={toggleModal}>
-	<h3>Add a new dog</h3>
-	<form>
-		<input type="text" placeholder="Name">
-		<input type="text" placeholder="Breed">
-		<button>Add Dog</button>
-	</form>
+	<AddDogForm />
 </Modal>
 <main>
   <button on:click={toggleModal}>Open Modal</button>
