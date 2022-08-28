@@ -1,12 +1,4 @@
 <script>
-    // EVENT MODIFIERS 
-    // 1 - Once - makes sure event can only be fired once (removes event handler)
-    // 2 - Prevent Default - prevent the default action (run e.preventDefault())
-    // 3 - self - only fires event if the clicked element is the target
-
-
-
-    export let message = "default value";
     // export show modal to app so can be toggled outside of modal
     export let showModal = false;
     export let isPromo = false;
@@ -17,7 +9,7 @@
 <!-- use single pipe to add event modifier -->
 <div class="backdrop" class:promo={isPromo} on:click|self>
     <div class="modal">
-        <p>{message}</p>
+        <slot></slot>
     </div>
 </div>
 {/if}

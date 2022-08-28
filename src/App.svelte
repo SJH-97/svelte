@@ -19,14 +19,18 @@
 		showModal = !showModal;
 	}
 	
-	// Setting a prop
-	let message = "i am a prop value"
-
 	// Setting Show modal prop 
 	let showModal = false;
 </script>
 
-<Modal message={message} isPromo {showModal} on:click={toggleModal}/>
+<Modal isPromo {showModal} on:click={toggleModal}>
+	<h3>Add a new dog</h3>
+	<form>
+		<input type="text" placeholder="Name">
+		<input type="text" placeholder="Breed">
+		<button>Add Dog</button>
+	</form>
+</Modal>
 <main>
   <button on:click={toggleModal}>Open Modal</button>
  {#each dogs as dog (dog.id)}
