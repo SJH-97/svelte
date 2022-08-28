@@ -13,13 +13,22 @@
 		// delete a dog from dogs
 		dogs = dogs.filter((dog) => dog.id !== id);
 	}
+
+	// Toggle Modal Function
+	const toggleModal = () => {
+		showModal = !showModal;
+	}
 	
 	// Setting a prop
 	let message = "i am a prop value"
+
+	// Setting Show modal prop 
+	let showModal = false;
 </script>
 
-<Modal message={message} isPromo/>
+<Modal message={message} isPromo {showModal} on:click={toggleModal}/>
 <main>
+  <button on:click={toggleModal}>Open Modal</button>
  {#each dogs as dog (dog.id)}
 <div>
 	<h4>{dog.name}</h4>

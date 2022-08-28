@@ -1,12 +1,13 @@
 <script>
     export let message = "default value";
-    let showModal = true;
+    // export show modal to app so can be toggled outside of modal
+    export let showModal = false;
     export let isPromo = false;
 </script>
 
 {#if showModal}
 <!-- add conditional styling using class:x={} -->
-<div class="backdrop" class:promo={isPromo}>
+<div class="backdrop" class:promo={isPromo} on:click>
     <div class="modal">
         <p>{message}</p>
     </div>
