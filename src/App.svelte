@@ -22,10 +22,17 @@
 	
 	// Setting Show modal prop 
 	let showModal = false;
+
+	// addDog function
+	const addDog = (e) => {
+		const dog = e.detail;
+		dogs = [dog, ...dogs];
+		showModal = false;
+	}
 </script>
 
 <Modal isPromo {showModal} on:click={toggleModal}>
-	<AddDogForm />
+	<AddDogForm on:addDog={addDog}/>
 </Modal>
 <main>
   <button on:click={toggleModal}>Open Modal</button>
